@@ -12,9 +12,117 @@
   -->
 </head>
 
-<body>
-  <!-- Your HTML goes here -->
-  <h1>Welcome to CS 2350!</h1>
+<!-- include draw function in body so it applies to ever canvas -->
+<body onload="draw()">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Marissa Mann</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="week10.html">Week10</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid py-5 bg-dark text-light">
+      <h1 class="display-3 fw-bold">Custom Bootstrap Jumbotron</h1>
+      <p class="fs-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quae, quibusdam aliquam consectetur veniam molestiae ad tempora accusantium ullam error nisi autem harum culpa deserunt. Ut iste hic quibusdam cum!</p>
+      <a href="" class="btn btn-primary btn-lg">See More...</a>
+  </div>
+  <div class="container">
+      <div class="row">
+          <!-- column #/12 -->
+          <div class="col-9 d-flex flex-column">
+              <h2>Canvas</h2>
+              <canvas id="myCanvas" width="400" height="600" class="bg-light"></canvas>
+          </div>
+          <div class="col-3">
+            <div class="card my-3">
+                <img src="https://media.istockphoto.com/photos/the-wold-of-fantastic-clouds-picture-id1316024691?b=1&k=20&m=1316024691&s=170667a&w=0&h=gDxztpx6lEpgU8lwLY9St4K3OxCZtRRVhgF0qHWXNzc=" alt="skypic">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <footer class="container-fluid bg-secondary text-info py-3 text-center">
+        <p>&copy All rights reserved</p>
+  </footer>
 
+<!-- end of body javascript -->
+<!-- document global variable has access to ALL ELEMENTS -->
+<!-- inspect-console-text javascript code -->
+<script>
+    function draw() {
+        const canvs = document.getElementById("myCanvas")
+        const cntxt = canvs.getContext("2d")
+
+        cntxt.fillStyle = "red"
+        cntxt.fillRect(300, 10, 100, 200)
+
+        cntxt.strokeStyle = "blue"
+        cntxt.beginPath()
+        cntxt.moveTo(75, 50)
+        cntxt.lineTo(100, 75)
+        cntxt.lineTo(125, 75)
+        // .stroke or .fill
+        cntxt.stroke()
+
+        cntxt.beginPath()
+        //center point, radius, starting angle, ending angle in radians clockwise/visaversa
+        cntxt.arc(150, 150, 50, 0, 2*Math.PI, true)
+        cntxt.fill()
+    }
+    let name1 = "Neo"
+    let name2 = "Morphius"
+    // const
+    // var type causes issues DON'T USE
+    document.write("<h1>Hello There " + name1 + ";)</h1>")
+
+    for(let i=0; i<10; i++){
+        let name = name2
+        if(name === "Morphius"){
+        document.write("<h2>This is " + name + "</h2>")
+        } else {
+            document.write("<h2>This is " + name + "</h2>")
+        }
+    }
+
+</script>
+<!--Bootstrap ALREADY included in json package NO IMPORT BOOTSTRAP SCRIPT -->
 </body>
 </html>
