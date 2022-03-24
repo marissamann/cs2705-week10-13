@@ -15,7 +15,7 @@ export function addGuest(event) {
     //empty string is false automatically
     if(guest.fname.trim() && guest.lname.trim()) {
         guests.push(guest)
-        let row = document.createElement("tr")
+        let row = document.createElement('tr')
         //add to row element
         //instead of ' and " ... ` ` creates multiline string
         row.innerHTML = `
@@ -23,7 +23,7 @@ export function addGuest(event) {
             <td>${guest.lname}</td>
         `
         //append child adds a CHILD to TBODY(first one if no id specification)
-        document.querySelector("tbody").appendChild("row")
+        document.querySelector("tbody").appendChild(row)
     }
     this.reset()
     
